@@ -1,0 +1,24 @@
+{
+  "name": "cypress_practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx cypress open",
+    "open":"node_modules/.bin/cypress open",
+    "chrome": "cypress run --browser chrome",
+     "headed": "npx cypress run --headed"
+    
+  },
+  "author": "Gauri",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "npx": "^10.2.2"
+  },
+  "devDependencies": {
+    "cypress": "^6.3.0"
+  }
+}

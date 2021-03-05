@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class= 'active'>
+        <span>hello</span>
+        <h1Heading></h1>
+        <ul id = "Fruits">
+                <li class = ".active">Mango </li>
+                <li>Banana </li>
+                <h1>Heading</h1>
+                <li id ="Grapes">Grapes </li>
+                <li>Apple </li>
+                <li>Chiku </li>
+
+    </ul>
+    </div>
+    
+
+</body>
+</html>
+
+#cy.screenshot()
+// children()
+
+cy.get('#Fruits').children('.active').should('have.text',"Mango")
+
+
+// closet()
+cy.get('#Fruits').closet('h1')
+cy.get('#Fruits').closet('div')
+cy.get('#Fruits').closet('h1')
+// eq()
+cy.get('li').eq().should('have.text',"Mango")
+cy.get('li').should('have.length',5)
+
+// filter() -- you will select a element with particular selector or property
+cy.get('li').filter('.active').contains('Grapes')
+
+//find() --> you will select element inside the particular element 
+(subdriver)
+
+// first() to retrive the first element
+
+cy.get('Fruits').first('li').should('have.text',"apple")
+
+
+// last to retrive the lastelement 
+cy.get('Fruits').last('li').should('have.text','sammung')
+
+// nextAll() // sibling ---
+//
+<!-- <div>
+    <li>Cofee<li>
+    <li>Black cofee<li>
+    <li>Tea</li>       //----------
+    <li>Green Tea</li>
+    <li>Ginger Tea</li>
+</div> -->
+// cy.get('li').contains('Tea').nextAll().should('have.length',2)
+
+// nextUntil() # sibling
+cy.get('li').contains('Tea').nextUntil('#ginger')
+
+//not()
+<!-- 
+<li class ='active'>A<li>
+<li>B<li>
+<li>C<li>
+<li>D<li>
+<li>E<li> -->
+//cy.get('li').not('.active').should('have.length',4)
+
+
+// parent()
+
+
+<div class = "new"> // parents
+    <ul> // parent   // parents
+
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+
+    <ul>
+<div>   
+
+#cy.get('li').parent().should('have.class','new')
+
+
+
+// previous and previousAll (sibling)
+
+<!-- <div class = "new"> // parents
+    <ul> // parent   // parents
+
+        <li>A</li> previousAll
+        <li>B</li> // previous // previousAll
+        <li>C</li>
+
+    <ul>
+<div>    -->
+
+<!-- // sibling()
+    <ul>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+
+    </ul> -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
